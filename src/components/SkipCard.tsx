@@ -22,6 +22,20 @@ interface SkipCardProps {
 }
 
 const SkipCard = ({ skip, index }: SkipCardProps) => {
+  // Generate different Unsplash image categories for variety
+  const getUnsplashImage = (skipId: number) => {
+    const categories = [
+      'construction',
+      'architecture', 
+      'industrial',
+      'building',
+      'tools',
+      'home-improvement'
+    ];
+    const category = categories[skipId % categories.length];
+    return `https://source.unsplash.com/600x400/?${category}&${skipId}`;
+  };
+
   return (
     <div className="group relative">
       {/* Subtle glow effect */}
@@ -63,7 +77,7 @@ const SkipCard = ({ skip, index }: SkipCardProps) => {
 
             <div className="aspect-video relative group-hover:scale-[1.02] transition-transform duration-700 overflow-hidden">
               <img
-                src={skip.image}
+                src={getUnsplashImage(skip.id)}
                 alt={skip.title}
                 className="w-full h-full object-cover"
               />
