@@ -84,7 +84,7 @@ const Index = () => {
       <Header />
       <Hero />
       
-      {/* Skip Selection Section */}
+      {/* Skip Selection Section with improved layout */}
       <section className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
         <div className="max-w-7xl mx-auto relative">
@@ -98,7 +98,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
             {skipSizes.map((skip, index) => (
               <SkipCard key={skip.id} skip={skip} index={index} />
             ))}
